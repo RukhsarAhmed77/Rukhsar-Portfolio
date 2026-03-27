@@ -1,0 +1,51 @@
+# MCP
+.mcp.json
+
+# Environment & secrets
+.env
+.env.*
+!.env.example
+!.env.sample
+*.local
+
+# API keys & credentials
+*.pem
+*.key
+*.p12
+*.pfx
+*.cert
+*.crt
+secrets.json
+secrets.yaml
+secrets.yml
+credentials.json
+credentials.yaml
+credentials.yml
+service-account*.json
+*_rsa
+*_rsa.pub
+*_dsa
+*_dsa.pub
+*_ecdsa
+*_ecdsa.pub
+*_ed25519
+*_ed25519.pub
+
+# Auth tokens
+.token
+*.token
+auth.json
+.auth
+
+# Cloud provider configs
+.aws/credentials
+.aws/config
+gcloud/
+.gcloud/
+azure.json
+
+# Password/secret files
+*.secret
+*.secrets
+password.txt
+passwords.txt

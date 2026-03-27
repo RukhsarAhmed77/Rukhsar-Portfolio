@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rukhsar Naich | Full Stack Developer & Digital Architect</title>
+  <meta name="description" content="Full Stack Developer specializing in MERN Stack, Shopify, and custom web solutions. Building next-gen digital experiences.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Cursor Glow -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- Particle Canvas -->
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- Preloader -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-inner">
+      <div class="preloader-ring"></div>
+      <div class="preloader-ring"></div>
+      <div class="preloader-ring"></div>
+      <span class="preloader-text">INITIALIZING</span>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <span class="logo-bracket">&lt;</span>Rukhsar<span class="logo-dot">.</span>dev<span class="logo-bracket">/&gt;</span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#testimonials" class="nav-link">Testimonials</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+      <a href="#contact" class="nav-cta">
+        <span>Hire Me</span>
+        <i class="fas fa-arrow-right"></i>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-radial-glow"></div>
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="hero-badge" data-animate="fade-up">
+          <span class="badge-dot"></span>
+          <span>Available for Projects</span>
+        </div>
+        <h1 class="hero-title" data-animate="fade-up" data-delay="0.1">
+          <span class="title-line">Crafting</span>
+          <span class="title-line">Digital</span>
+          <span class="title-line title-gradient">Experiences</span>
+          <span class="title-line">From <span class="title-outline">Code</span></span>
+        </h1>
+        <p class="hero-description" data-animate="fade-up" data-delay="0.2">
+          Full Stack Developer specializing in building exceptional digital products.
+          I transform complex problems into elegant, scalable solutions using the MERN stack,
+          Shopify ecosystems, and modern web technologies.
+        </p>
+        <div class="hero-actions" data-animate="fade-up" data-delay="0.3">
+          <a href="#contact" class="btn btn-primary">
+            <span>Start a Project</span>
+            <i class="fas fa-rocket"></i>
+          </a>
+          <a href="#about" class="btn btn-outline">
+            <span>Explore</span>
+            <i class="fas fa-arrow-down"></i>
+          </a>
+        </div>
+        <div class="hero-stats" data-animate="fade-up" data-delay="0.4">
+          <div class="stat-item">
+            <span class="stat-number" data-count="50">0</span><span class="stat-suffix">+</span>
+            <span class="stat-label">Projects</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number" data-count="30">0</span><span class="stat-suffix">+</span>
+            <span class="stat-label">Clients</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number" data-count="3">0</span><span class="stat-suffix">+</span>
+            <span class="stat-label">Years Exp.</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual" data-animate="fade-left">
+        <div class="hero-card">
+          <div class="hero-card-gradient"></div>
+          <div class="hero-image-wrapper">
+            <div class="code-window">
+              <div class="code-header">
+                <span class="code-dot red"></span>
+                <span class="code-dot yellow"></span>
+                <span class="code-dot green"></span>
+                <span class="code-title">portfolio.js</span>
+              </div>
+              <pre class="code-body"><code><span class="code-keyword">const</span> <span class="code-var">developer</span> = {
+  <span class="code-key">name</span>: <span class="code-string">"Rukhsar Naich"</span>,
+  <span class="code-key">role</span>: <span class="code-string">"Full Stack Dev"</span>,
+  <span class="code-key">stack</span>: [<span class="code-string">"React"</span>, <span class="code-string">"Node"</span>,
+         <span class="code-string">"MongoDB"</span>, <span class="code-string">"Express"</span>],
+  <span class="code-key">passion</span>: <span class="code-string">"Building the future"</span>,
+  <span class="code-key">status</span>: <span class="code-string">"Ready to create"</span>
+};
+
+<span class="code-keyword">export default</span> developer;</code></pre>
+            </div>
+          </div>
+          <div class="floating-badge badge-top">
+            <i class="fab fa-react fa-spin"></i>
+            <span>React Developer</span>
+          </div>
+          <div class="floating-badge badge-bottom">
+            <i class="fab fa-node-js"></i>
+            <span>MERN Stack</span>
+          </div>
+          <div class="floating-badge badge-left">
+            <i class="fab fa-shopify"></i>
+            <span>Shopify Expert</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator" data-animate="fade-up" data-delay="0.5">
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+      <span>Scroll to explore</span>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="section-container">
+      <div class="about-grid">
+        <div class="about-content" data-animate="fade-right">
+          <h2 class="section-title">The Architect</h2>
+          <p class="about-text">
+            My journey in tech began with a curiosity for how data flows across the digital void.
+            Today, I bridge the gap between elegant front-end interfaces and robust back-end systems.
+            As a university student, I combine academic rigor with real-world execution in
+            Shopify dropshipping and custom MERN development.
+          </p>
+          <div class="about-details">
+            <div class="detail-item">
+              <i class="fas fa-graduation-cap"></i>
+              <span>BS Computer Science Student</span>
+            </div>
+            <div class="detail-item">
+              <i class="fas fa-code"></i>
+              <span>Full Stack Web Development</span>
+            </div>
+          </div>
+          <div class="about-social">
+            <a href="#" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="about-tech" data-animate="fade-left">
+          <div class="glass-card">
+            <h3 class="card-label">Tech Stack & Expertise</h3>
+            <div class="skill-tags">
+              <span class="skill-tag" data-skill="95">React</span>
+              <span class="skill-tag" data-skill="90">Node.js</span>
+              <span class="skill-tag" data-skill="85">MongoDB</span>
+              <span class="skill-tag" data-skill="88">Express</span>
+              <span class="skill-tag" data-skill="80">Shopify</span>
+              <span class="skill-tag" data-skill="95">JavaScript</span>
+              <span class="skill-tag" data-skill="90">HTML/CSS</span>
+              <span class="skill-tag" data-skill="85">Tailwind CSS</span>
+              <span class="skill-tag" data-skill="75">TypeScript</span>
+              <span class="skill-tag" data-skill="70">Next.js</span>
+              <span class="skill-tag" data-skill="85">Bootstrap</span>
+              <span class="skill-tag" data-skill="75">Supabase</span>
+              <span class="skill-tag" data-skill="75">Firebase</span>
+              <span class="skill-tag" data-skill="80">GSAP</span>
+            </div>
+            <div class="terminal">
+              <div class="terminal-header">
+                <span class="terminal-dot red"></span>
+                <span class="terminal-dot cyan"></span>
+                <span class="terminal-dot light"></span>
+              </div>
+              <div class="terminal-body">
+                <div class="terminal-line">
+                  <span class="terminal-prompt">visitor@portfolio:~$</span>
+                  <span class="terminal-command" id="typedCommand"></span>
+                  <span class="terminal-cursor">|</span>
+                </div>
+                <div class="terminal-output" id="terminalOutput"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services" id="services">
+    <div class="section-container">
+      <div class="section-header" data-animate="fade-up">
+        <h2 class="section-title center">Services & Pricing</h2>
+        <p class="section-subtitle">
+          High-performance digital products engineered for growth. Choose a tier that fits your project requirements.
+        </p>
+      </div>
+      <div class="pricing-grid">
+        <!-- Basic -->
+        <div class="pricing-card" data-animate="fade-up" data-delay="0.1">
+          <div class="pricing-header">
+            <span class="pricing-tier">Starting Point</span>
+            <h3 class="pricing-name">Basic</h3>
+            <div class="pricing-price">
+              <span class="price-amount">Rs. 50k</span>
+              <span class="price-period">/ project</span>
+            </div>
+          </div>
+          <ul class="pricing-features">
+            <li><i class="fas fa-check-circle"></i> Single Page Website</li>
+            <li><i class="fas fa-check-circle"></i> Responsive UI Design</li>
+            <li><i class="fas fa-check-circle"></i> Basic Shopify Store Setup</li>
+            <li><i class="fas fa-check-circle"></i> Contact Form Integration</li>
+            <li><i class="fas fa-check-circle"></i> 2 Revision Rounds</li>
+            <li><i class="fas fa-check-circle"></i> 2 Weeks Delivery</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline btn-block">Get Started</a>
+        </div>
+
+        <!-- Standard (Featured) -->
+        <div class="pricing-card featured" data-animate="fade-up" data-delay="0.2">
+          <div class="pricing-badge">Recommended</div>
+          <div class="pricing-header">
+            <span class="pricing-tier accent">Professional Choice</span>
+            <h3 class="pricing-name">Standard</h3>
+            <div class="pricing-price">
+              <span class="price-amount">Rs. 80k</span>
+              <span class="price-period">/ project</span>
+            </div>
+          </div>
+          <ul class="pricing-features">
+            <li><i class="fas fa-check-circle"></i> Multi-Page React Application</li>
+            <li><i class="fas fa-check-circle"></i> Full Shopify Customization</li>
+            <li><i class="fas fa-check-circle"></i> REST API Integration</li>
+            <li><i class="fas fa-check-circle"></i> SEO Optimization</li>
+            <li><i class="fas fa-check-circle"></i> Admin Dashboard</li>
+            <li><i class="fas fa-check-circle"></i> 4 Revision Rounds</li>
+            <li><i class="fas fa-check-circle"></i> 1 Month Free Support</li>
+          </ul>
+          <a href="#contact" class="btn btn-primary btn-block">Select Plan</a>
+        </div>
+
+        <!-- Premium -->
+        <div class="pricing-card" data-animate="fade-up" data-delay="0.3">
+          <div class="pricing-header">
+            <span class="pricing-tier">Enterprise Level</span>
+            <h3 class="pricing-name">Premium</h3>
+            <div class="pricing-price">
+              <span class="price-amount">Rs. 120k</span>
+              <span class="price-period">/ project</span>
+            </div>
+          </div>
+          <ul class="pricing-features">
+            <li><i class="fas fa-check-circle"></i> Full Stack MERN Application</li>
+            <li><i class="fas fa-check-circle"></i> Custom E-commerce System</li>
+            <li><i class="fas fa-check-circle"></i> Payment Gateway Integration</li>
+            <li><i class="fas fa-check-circle"></i> Role-Based Auth System</li>
+            <li><i class="fas fa-check-circle"></i> Priority 24/7 Support</li>
+            <li><i class="fas fa-check-circle"></i> Unlimited Revisions</li>
+            <li><i class="fas fa-check-circle"></i> 3 Months Maintenance</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline btn-block">Contact Sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials" id="testimonials">
+    <div class="section-container">
+      <div class="testimonials-header" data-animate="fade-up">
+        <div class="testimonials-title-group">
+          <h2 class="section-title">Client Feedback</h2>
+          <p class="section-subtitle left">
+            Trust is built through performance. Here's what my partners have to say about our collaborations.
+          </p>
+        </div>
+        <div class="testimonial-nav">
+          <button class="nav-arrow" id="prevTestimonial" aria-label="Previous">
+            <i class="fas fa-arrow-left"></i>
+          </button>
+          <button class="nav-arrow" id="nextTestimonial" aria-label="Next">
+            <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+      <div class="testimonials-track" id="testimonialsTrack">
+        <div class="testimonial-card" data-animate="fade-up" data-delay="0.1">
+          <div class="testimonial-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="testimonial-text">
+            "Rukhsar transformed our Shopify store's conversion rate overnight. His technical depth in the MERN stack allowed us to build custom features that were previously impossible."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">AT</div>
+            <div class="author-info">
+              <strong>Alex Thorne</strong>
+              <span>Founder, Nexus E-com</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card" data-animate="fade-up" data-delay="0.2">
+          <div class="testimonial-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+          </div>
+          <p class="testimonial-text">
+            "One of the most dedicated developers I've worked with. The attention to detail in the UI/UX design was exceptional. Highly recommend for any Full Stack project."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">SJ</div>
+            <div class="author-info">
+              <strong>Sarah Jenkins</strong>
+              <span>CTO, WebFlow Solutions</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card" data-animate="fade-up" data-delay="0.3">
+          <div class="testimonial-stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p class="testimonial-text">
+            "Working with Rukhsar was a game-changer for our startup. He delivered a production-ready MERN application in record time with exceptional code quality and documentation."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">MK</div>
+            <div class="author-info">
+              <strong>Marcus Klein</strong>
+              <span>CEO, DataPulse Inc.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="contact-glow"></div>
+    <div class="section-container narrow">
+      <div class="section-header" data-animate="fade-up">
+        <h2 class="section-title center">Initialize Contact</h2>
+        <p class="section-subtitle">
+          Ready to start a new project? Fill out the form below and let's build something extraordinary.
+        </p>
+      </div>
+      <div class="contact-form-wrapper glass-card" data-animate="fade-up" data-delay="0.1">
+        <form class="contact-form" id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Full Name</label>
+              <input type="text" class="form-input" placeholder="John Doe" required>
+              <div class="input-glow"></div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email Address</label>
+              <input type="email" class="form-input" placeholder="john@example.com" required>
+              <div class="input-glow"></div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Message</label>
+            <textarea class="form-input form-textarea" placeholder="Describe your vision..." rows="5" required></textarea>
+            <div class="input-glow"></div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block btn-lg">
+            <span>Send Transmission</span>
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </form>
+        <div class="form-success" id="formSuccess">
+          <div class="success-icon">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          <h3>Transmission Sent!</h3>
+          <p>Thank you for reaching out. I'll get back to you within 24 hours.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="#" class="nav-logo">
+          <span class="logo-bracket">&lt;</span>Rukhsar<span class="logo-dot">.</span>dev<span class="logo-bracket">/&gt;</span>
+        </a>
+      </div>
+      <p class="footer-copy">&copy; 2026 Rukhsar Naich. Engineered with precision.</p>
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

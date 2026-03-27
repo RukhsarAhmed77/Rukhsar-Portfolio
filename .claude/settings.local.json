@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__claude_ai_Figma__get_design_context",
+      "mcp__claude_ai_Vercel__list_teams",
+      "mcp__claude_ai_Vercel__deploy_to_vercel",
+      "Bash(vercel --version)",
+      "Bash(npm --version)",
+      "Bash(npm install:*)",
+      "Bash(vercel --name rukhsar-portfolio --yes)"
+    ]
+  }
+}
