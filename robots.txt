@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rukhsar-portfolio-ten.vercel.app/sitemap.xml
