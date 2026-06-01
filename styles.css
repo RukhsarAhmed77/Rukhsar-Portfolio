@@ -464,7 +464,7 @@ body:hover .cursor-glow { opacity: 1; }
   transform: translate(-50%, -50%);
   width: 800px;
   height: 800px;
-  background: radial-gradient(circle, rgba(0, 241, 254, 0.08) 0%, transparent 60%);
+  background: radial-gradient(circle, rgba(0, 241, 254, 0.05) 0%, transparent 60%);
   pointer-events: none;
 }
 
@@ -778,29 +778,36 @@ body:hover .cursor-glow { opacity: 1; }
 .about-text {
   font-size: 18px;
   color: var(--text-secondary);
-  line-height: 1.625;
+  line-height: 1.75;
+  border-left: 2px solid var(--accent-dark);
+  padding-left: 20px;
 }
 
 .about-details {
   display: flex;
-  flex-direction: column;
-  gap: 16px;
+  flex-wrap: wrap;
+  gap: 10px;
   padding-top: 8px;
 }
 
 .detail-item {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 16px;
-  font-size: 16px;
+  gap: 10px;
+  font-size: 14px;
+  font-family: var(--font-heading);
+  font-weight: 500;
   color: var(--text-secondary);
+  background: rgba(0, 241, 254, 0.04);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 8px 16px;
+  width: fit-content;
 }
 
 .detail-item i {
   color: var(--accent-deep);
-  font-size: 18px;
-  width: 22px;
-  text-align: center;
+  font-size: 14px;
 }
 
 .about-social {
@@ -931,6 +938,125 @@ body:hover .cursor-glow { opacity: 1; }
   margin-top: 8px;
   color: var(--text-secondary);
   white-space: pre-wrap;
+}
+
+/* ============================================
+   PROJECTS
+   ============================================ */
+.projects {
+  padding: 128px 24px;
+  background: var(--bg-secondary);
+  position: relative;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.project-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.project-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-6px);
+}
+
+.project-card:hover::before {
+  opacity: 1;
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.project-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  background: rgba(0, 241, 254, 0.08);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  font-size: 18px;
+}
+
+.project-links {
+  display: flex;
+  gap: 12px;
+}
+
+.project-link {
+  color: var(--text-muted);
+  font-size: 15px;
+  transition: var(--transition);
+}
+
+.project-link:hover {
+  color: var(--accent);
+}
+
+.project-title {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 4px;
+}
+
+.project-description {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  flex: 1;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-top: 4px;
+}
+
+.project-tags span {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--accent-deep);
+  background: rgba(0, 241, 254, 0.06);
+  border: 1px solid rgba(0, 241, 254, 0.15);
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+@media (max-width: 1024px) {
+  .projects-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
 }
 
 /* ============================================
@@ -1118,13 +1244,13 @@ body:hover .cursor-glow { opacity: 1; }
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 41px;
-  box-shadow: var(--shadow-glow);
   transition: var(--transition);
 }
 
 .testimonial-card:hover {
   border-color: var(--border-hover);
-  transform: translateY(-5px);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-glow);
 }
 
 .testimonial-stars {

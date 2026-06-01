@@ -73,7 +73,7 @@ class Particle {
 }
 
 // Create particles
-for (let i = 0; i < 80; i++) {
+for (let i = 0; i < 50; i++) {
   particles.push(new Particle());
 }
 
@@ -269,23 +269,24 @@ const terminalCommands = [
     cmd: 'rukhsar --info',
     output: `{
   "role": "Full Stack Developer",
-  "specialization": "Shopify Stores & MERN Apps",
-  "status": "Ready to build next-gen solutions"
+  "stack": "MERN + Shopify",
+  "location": "Pakistan",
+  "available": true
 }`
   },
   {
     cmd: 'rukhsar --skills',
     output: `[
-  "React.js", "Node.js", "MongoDB",
-  "Express.js", "Shopify", "Next.js",
+  "React", "Node.js", "MongoDB",
+  "Express", "Shopify", "Next.js",
   "TypeScript", "Tailwind CSS"
 ]`
   },
   {
     cmd: 'rukhsar --contact',
     output: `{
-  "email": "rukhsar@developer.io",
-  "github": "github.com/rukhsar",
+  "email": "rukhsarnaich0@gmail.com",
+  "github": "github.com/rukhsarahmed77",
   "available": true
 }`
   }
