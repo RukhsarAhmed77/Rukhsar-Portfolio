@@ -457,7 +457,13 @@ body::before {
 .work-item:hover::before { width: 3px; }
 
 .work-meta { display: flex; flex-direction: column; gap: 10px; }
-.work-num { font-family: var(--font-mono); font-size: 13px; color: var(--text-faint); }
+.work-num {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-faint);
+  transition: color 0.35s var(--ease);
+}
+.work-item:hover .work-num { color: var(--lime); }
 .work-type {
   font-size: 11px;
   font-family: var(--font-mono);
@@ -471,9 +477,42 @@ body::before {
   letter-spacing: 0.5px;
 }
 
-.work-body h3 { font-family: var(--font-display); font-size: 24px; font-weight: 600; letter-spacing: -0.6px; margin-bottom: 10px; }
-.work-body p { color: var(--text-muted); max-width: 54ch; margin-bottom: 16px; font-size: 15px; }
-.work-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.work-body h3 {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.6px;
+  margin-bottom: 10px;
+  transition: transform 0.4s var(--ease), color 0.3s var(--ease);
+}
+/* Arrow that flies in on hover */
+.work-body h3::after {
+  content: '\f061'; /* arrow-right */
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  font-size: 15px;
+  color: var(--lime);
+  opacity: 0;
+  transform: translateX(-12px) rotate(-45deg);
+  transition: opacity 0.4s var(--ease), transform 0.4s var(--ease);
+}
+.work-item:hover .work-body h3 { transform: translateX(10px); color: var(--lime); }
+.work-item:hover .work-body h3::after { opacity: 1; transform: translateX(0) rotate(-45deg); }
+
+.work-body p {
+  color: var(--text-muted);
+  max-width: 54ch;
+  margin-bottom: 16px;
+  font-size: 15px;
+  transition: transform 0.4s var(--ease);
+}
+.work-item:hover .work-body p { transform: translateX(10px); }
+
+.work-tags { display: flex; flex-wrap: wrap; gap: 8px; transition: transform 0.4s var(--ease); }
+.work-item:hover .work-tags { transform: translateX(10px); }
 .work-tags span {
   font-family: var(--font-mono);
   font-size: 12px;
