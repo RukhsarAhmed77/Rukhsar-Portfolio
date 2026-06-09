@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://rukhsar-portfolio-ten.vercel.app/sitemap.xml
+Sitemap: https://buildhaus.vercel.app/sitemap.xml
