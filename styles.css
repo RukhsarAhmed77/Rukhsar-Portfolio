@@ -441,7 +441,7 @@ body::before {
   align-items: start;
   padding: 40px 0;
   border-bottom: 1px solid var(--line);
-  transition: background 0.4s var(--ease), padding 0.4s var(--ease);
+  transition: background 0.7s var(--ease), padding 0.7s var(--ease);
   position: relative;
 }
 /* accent line that extends from left on hover */
@@ -451,7 +451,7 @@ body::before {
   left: 0; top: 0; bottom: 0;
   width: 0;
   background: var(--violet);
-  transition: width 0.4s var(--ease);
+  transition: width 0.7s var(--ease);
 }
 .work-item:hover { background: var(--surface); padding-left: 28px; padding-right: 28px; }
 .work-item:hover::before { width: 3px; }
@@ -461,7 +461,7 @@ body::before {
   font-family: var(--font-mono);
   font-size: 13px;
   color: var(--text-faint);
-  transition: color 0.35s var(--ease);
+  transition: color 0.6s var(--ease);
 }
 .work-item:hover .work-num { color: var(--lime); }
 .work-type {
@@ -486,7 +486,7 @@ body::before {
   font-weight: 600;
   letter-spacing: -0.6px;
   margin-bottom: 10px;
-  transition: transform 0.4s var(--ease), color 0.3s var(--ease);
+  transition: transform 0.7s var(--ease), color 0.6s var(--ease);
 }
 /* Arrow that flies in on hover */
 .work-body h3::after {
@@ -497,7 +497,7 @@ body::before {
   color: var(--lime);
   opacity: 0;
   transform: translateX(-12px) rotate(-45deg);
-  transition: opacity 0.4s var(--ease), transform 0.4s var(--ease);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
 }
 .work-item:hover .work-body h3 { transform: translateX(10px); color: var(--lime); }
 .work-item:hover .work-body h3::after { opacity: 1; transform: translateX(0) rotate(-45deg); }
@@ -507,11 +507,11 @@ body::before {
   max-width: 54ch;
   margin-bottom: 16px;
   font-size: 15px;
-  transition: transform 0.4s var(--ease);
+  transition: transform 0.75s var(--ease);
 }
 .work-item:hover .work-body p { transform: translateX(10px); }
 
-.work-tags { display: flex; flex-wrap: wrap; gap: 8px; transition: transform 0.4s var(--ease); }
+.work-tags { display: flex; flex-wrap: wrap; gap: 8px; transition: transform 0.8s var(--ease); }
 .work-item:hover .work-tags { transform: translateX(10px); }
 .work-tags span {
   font-family: var(--font-mono);
