@@ -191,8 +191,23 @@ body::before {
 }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; }
 
-.brand { font-family: var(--font-display); font-weight: 700; font-size: 18px; letter-spacing: -0.4px; }
-.brand-dot { color: var(--lime); }
+.brand { display: inline-flex; align-items: center; }
+.logo-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  background: var(--lime);
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: -0.5px;
+  border-radius: 11px;
+  transition: transform 0.35s var(--ease), border-radius 0.35s var(--ease);
+}
+.brand:hover .logo-mark { transform: rotate(-8deg) scale(1.05); border-radius: 50%; }
 
 .nav-links { display: flex; gap: 4px; }
 .nav-links a { font-size: 14px; font-weight: 500; color: var(--text-muted); padding: 8px 14px; border-radius: 8px; transition: color 0.2s, background 0.2s; }
