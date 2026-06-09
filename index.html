@@ -15,6 +15,10 @@
 </head>
 <body>
 
+  <!-- Custom cursor (hidden on touch devices via CSS) -->
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
   <!-- Navigation -->
   <header class="nav" id="nav">
     <div class="wrap nav-inner">
@@ -40,47 +44,79 @@
 
     <!-- Hero -->
     <section class="hero">
-      <div class="wrap">
-        <p class="eyebrow reveal">
+      <div class="wrap hero-wrap">
+        <p class="eyebrow">
           <span class="status-dot"></span> Available for freelance work
         </p>
-        <h1 class="hero-title reveal" data-delay="1">
-          Full stack developer building
-          <span class="hl">fast, reliable</span> web products.
+        <!-- Title: each line is overflow:hidden; inner animates up on load -->
+        <h1 class="hero-title" id="heroTitle" aria-label="Full Stack Developer & Shopify Expert.">
+          <span class="line"><span class="line-inner">Full Stack</span></span>
+          <span class="line"><span class="line-inner title-hl">Developer</span></span>
+          <span class="line"><span class="line-inner">& Shopify</span></span>
+          <span class="line"><span class="line-inner title-stroke">Expert.</span></span>
         </h1>
-        <p class="hero-lead reveal" data-delay="2">
-          I'm Rukhsar — a computer science student and freelance developer from Pakistan.
-          I build MERN applications and Shopify stores for clients who care about clean
-          code and software that actually works.
-        </p>
-        <div class="hero-actions reveal" data-delay="3">
-          <a href="#work" class="btn btn-light">View my work</a>
-          <a href="#contact" class="btn btn-ghost">Start a project <i class="fas fa-arrow-right"></i></a>
+        <div class="hero-bottom">
+          <p class="hero-lead reveal">
+            I'm Rukhsar — a CS student and freelance developer from Pakistan.
+            I build MERN apps and Shopify stores for clients who care about
+            clean code and software that actually ships.
+          </p>
+          <div class="hero-actions reveal" data-delay="1">
+            <a href="#work" class="btn btn-light">View my work</a>
+            <a href="#contact" class="btn btn-ghost">Start a project <i class="fas fa-arrow-right"></i></a>
+          </div>
         </div>
-        <dl class="hero-stats reveal" data-delay="4">
-          <div>
-            <dt data-count="50">0</dt>
-            <dd>Projects shipped</dd>
-          </div>
-          <div>
-            <dt data-count="30">0</dt>
-            <dd>Happy clients</dd>
-          </div>
-          <div>
-            <dt data-count="3">0</dt>
-            <dd>Years freelancing</dd>
-          </div>
-        </dl>
+      </div>
+      <div class="hero-foot reveal" data-delay="2">
+        <div class="wrap hero-foot-inner">
+          <dl class="hero-stats">
+            <div><dt data-count="50">0</dt><dd>Projects</dd></div>
+            <div><dt data-count="30">0</dt><dd>Clients</dd></div>
+            <div><dt data-count="3">0</dt><dd>Years</dd></div>
+          </dl>
+          <span class="scroll-hint">
+            Scroll <span class="scroll-bar"><span class="scroll-fill"></span></span>
+          </span>
+        </div>
       </div>
     </section>
+
+    <!-- Marquee ticker -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>React</span><i>✦</i>
+        <span>Node.js</span><i>✦</i>
+        <span>MongoDB</span><i>✦</i>
+        <span>Express</span><i>✦</i>
+        <span>Shopify</span><i>✦</i>
+        <span>Next.js</span><i>✦</i>
+        <span>TypeScript</span><i>✦</i>
+        <span>Tailwind CSS</span><i>✦</i>
+        <span>Supabase</span><i>✦</i>
+        <span>Firebase</span><i>✦</i>
+        <span>REST APIs</span><i>✦</i>
+        <!-- duplicate for seamless loop -->
+        <span>React</span><i>✦</i>
+        <span>Node.js</span><i>✦</i>
+        <span>MongoDB</span><i>✦</i>
+        <span>Express</span><i>✦</i>
+        <span>Shopify</span><i>✦</i>
+        <span>Next.js</span><i>✦</i>
+        <span>TypeScript</span><i>✦</i>
+        <span>Tailwind CSS</span><i>✦</i>
+        <span>Supabase</span><i>✦</i>
+        <span>Firebase</span><i>✦</i>
+        <span>REST APIs</span><i>✦</i>
+      </div>
+    </div>
 
     <!-- Work -->
     <section class="section" id="work">
       <div class="wrap">
-        <div class="section-head reveal">
-          <span class="section-index">01 — Work</span>
-          <h2 class="section-title">Selected projects</h2>
-          <p class="section-sub">A few things I've built recently. More on my GitHub.</p>
+        <div class="section-head">
+          <span class="section-index reveal">01 — Work</span>
+          <h2 class="section-title reveal-title"><span class="inner">Selected projects</span></h2>
+          <p class="section-sub reveal">A few things I've built. More on my GitHub.</p>
         </div>
 
         <ul class="work-list">
@@ -91,10 +127,7 @@
             </div>
             <div class="work-body">
               <h3>Custom Shopify Storefront</h3>
-              <p>
-                A fully customized storefront with a bespoke Liquid theme, upsell flows,
-                and third-party app integrations for a dropshipping client.
-              </p>
+              <p>A fully customized storefront with a bespoke Liquid theme, upsell flows, and third-party app integrations for a dropshipping client.</p>
               <div class="work-tags">
                 <span>Liquid</span><span>JavaScript</span><span>Shopify API</span>
               </div>
@@ -112,10 +145,7 @@
             </div>
             <div class="work-body">
               <h3>Team Task Manager</h3>
-              <p>
-                A full-stack task management app with JWT auth, role-based access, a REST
-                API, and a React dashboard. Built for a small remote team.
-              </p>
+              <p>A full-stack task management app with JWT auth, role-based access, a REST API, and a React dashboard. Built for a small remote team.</p>
               <div class="work-tags">
                 <span>React</span><span>Node.js</span><span>Express</span><span>MongoDB</span>
               </div>
@@ -133,10 +163,7 @@
             </div>
             <div class="work-body">
               <h3>E-commerce Admin Dashboard</h3>
-              <p>
-                An admin panel for managing inventory, orders, and analytics — built with
-                Next.js and Supabase, with real-time data and a clean, fast UI.
-              </p>
+              <p>An admin panel for managing inventory, orders, and analytics — built with Next.js and Supabase, with real-time data and a clean, fast UI.</p>
               <div class="work-tags">
                 <span>Next.js</span><span>Supabase</span><span>Tailwind</span>
               </div>
@@ -153,27 +180,27 @@
     <!-- About -->
     <section class="section section-alt" id="about">
       <div class="wrap about-grid">
-        <div class="about-main reveal">
-          <span class="section-index">02 — About</span>
-          <h2 class="section-title">A bit about me</h2>
-          <p class="about-text">
+        <div class="about-main">
+          <span class="section-index reveal">02 — About</span>
+          <h2 class="section-title reveal-title"><span class="inner">A bit about me</span></h2>
+          <p class="about-text reveal">
             I learned to code by building real things, not just following tutorials.
             Over the last few years I've shipped MERN applications and Shopify stores
             as a freelancer, while studying for my BS in Computer Science.
           </p>
-          <p class="about-text">
+          <p class="about-text reveal">
             What I care about: writing code that's easy to maintain, understanding what
-            a client actually needs before building it, and shipping work I'd be happy
-            to put my name on. No jargon, no overengineering — just solid software.
+            a client actually needs before building it, and shipping work I'd be proud
+            to put my name on.
           </p>
-          <div class="about-socials">
+          <div class="about-socials reveal">
             <a href="https://github.com/rukhsarahmed77" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
             <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
             <a href="mailto:rukhsarnaich0@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
           </div>
         </div>
 
-        <aside class="about-side reveal" data-delay="2">
+        <aside class="about-side reveal" data-delay="1">
           <div class="side-block">
             <h4>Currently</h4>
             <p>Studying CS &amp; taking on freelance projects</p>
@@ -197,13 +224,10 @@
     <!-- Services -->
     <section class="section section-brand" id="services">
       <div class="wrap">
-        <div class="section-head reveal">
-          <span class="section-index">03 — Services</span>
-          <h2 class="section-title">How I can help</h2>
-          <p class="section-sub">
-            Three starting points that cover most projects. Not sure which fits?
-            Just send a message and we'll figure it out together.
-          </p>
+        <div class="section-head">
+          <span class="section-index reveal">03 — Services</span>
+          <h2 class="section-title reveal-title"><span class="inner">How I can help</span></h2>
+          <p class="section-sub reveal">Three tiers that cover most projects. Not sure which fits? Just message me.</p>
         </div>
 
         <div class="pricing-grid">
@@ -258,39 +282,27 @@
     <!-- Testimonials -->
     <section class="section section-alt" id="testimonials">
       <div class="wrap">
-        <div class="section-head reveal">
-          <span class="section-index">04 — Testimonials</span>
-          <h2 class="section-title">What clients say</h2>
+        <div class="section-head">
+          <span class="section-index reveal">04 — Testimonials</span>
+          <h2 class="section-title reveal-title"><span class="inner">What clients say</span></h2>
         </div>
-
         <div class="quotes">
           <figure class="quote reveal">
-            <blockquote>
-              "Rukhsar improved our Shopify store's conversion rate quickly. His grasp of
-              the MERN stack let us build custom features we'd been told were impossible."
-            </blockquote>
+            <blockquote>"Rukhsar improved our Shopify store's conversion rate quickly. His grasp of the MERN stack let us build custom features we'd been told were impossible."</blockquote>
             <figcaption>
               <span class="avatar">AT</span>
               <span><strong>Alex Thorne</strong>Founder, Nexus E-com</span>
             </figcaption>
           </figure>
-
           <figure class="quote reveal" data-delay="1">
-            <blockquote>
-              "One of the most dependable developers I've worked with. The attention to
-              detail in the UI was excellent. Highly recommend for any full stack work."
-            </blockquote>
+            <blockquote>"One of the most dependable developers I've worked with. Excellent attention to detail in the UI. Highly recommend for any full stack work."</blockquote>
             <figcaption>
               <span class="avatar">SJ</span>
               <span><strong>Sarah Jenkins</strong>CTO, WebFlow Solutions</span>
             </figcaption>
           </figure>
-
           <figure class="quote reveal" data-delay="2">
-            <blockquote>
-              "He delivered a production-ready MERN app in record time, with clean code
-              and clear documentation. A genuine asset to our startup."
-            </blockquote>
+            <blockquote>"He delivered a production-ready MERN app in record time, with clean code and clear documentation. A genuine asset to our startup."</blockquote>
             <figcaption>
               <span class="avatar">MK</span>
               <span><strong>Marcus Klein</strong>CEO, DataPulse Inc.</span>
@@ -303,18 +315,14 @@
     <!-- Contact -->
     <section class="section section-pop" id="contact">
       <div class="wrap contact-grid">
-        <div class="contact-intro reveal">
-          <span class="section-index">05 — Contact</span>
-          <h2 class="section-title">Let's work together</h2>
-          <p class="section-sub left">
-            Have a project in mind or just want to say hi? Drop me a message and I'll
-            reply within 24 hours.
-          </p>
-          <a href="mailto:rukhsarnaich0@gmail.com" class="contact-email">
+        <div class="contact-intro">
+          <span class="section-index reveal">05 — Contact</span>
+          <h2 class="section-title reveal-title"><span class="inner">Let's work together</span></h2>
+          <p class="section-sub left reveal">Have a project in mind? Drop me a message. I reply within 24 hours.</p>
+          <a href="mailto:rukhsarnaich0@gmail.com" class="contact-email reveal">
             <i class="fas fa-envelope"></i> rukhsarnaich0@gmail.com
           </a>
         </div>
-
         <form class="contact-form reveal" id="contactForm" data-delay="1">
           <div class="field">
             <label>Name</label>
@@ -329,18 +337,17 @@
             <textarea name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
           </div>
           <button type="submit" class="btn btn-light btn-block">Send message</button>
-          <p class="form-note" id="formNote" hidden>Thanks — your message has been sent. I'll be in touch soon.</p>
+          <p class="form-note" id="formNote" hidden>Thanks — I'll be in touch soon.</p>
         </form>
       </div>
     </section>
 
   </main>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="wrap footer-inner">
       <span class="brand">Rukhsar Naich<span class="brand-dot">.</span></span>
-      <p class="footer-copy">© 2026 Rukhsar Naich — built from scratch.</p>
+      <p class="footer-copy">© 2026 — built from scratch.</p>
       <a href="#top" class="footer-top">Back to top <i class="fas fa-arrow-up"></i></a>
     </div>
   </footer>

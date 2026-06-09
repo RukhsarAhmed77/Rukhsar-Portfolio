@@ -1,11 +1,66 @@
 // ============================================
-// NAV — shadow on scroll + mobile menu
+// HERO TITLE — line-by-line entrance on load
 // ============================================
-const nav = document.getElementById('nav');
-const navToggle = document.getElementById('navToggle');
-const navLinks = document.getElementById('navLinks');
+window.addEventListener('load', () => {
+  // Tiny delay ensures fonts are painted
+  requestAnimationFrame(() => {
+    document.getElementById('heroTitle').classList.add('ready');
+  });
+});
 
-const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 20);
+// ============================================
+// CUSTOM CURSOR — lerp-following circle
+// ============================================
+const cursor    = document.getElementById('cursor');
+const cursorDot = document.getElementById('cursorDot');
+const isTouchDevice = window.matchMedia('(pointer: coarse)').matches;
+
+if (!isTouchDevice) {
+  let mx = -200, my = -200;  // mouse
+  let cx = -200, cy = -200;  // cursor (lerped)
+
+  const lerp = (a, b, t) => a + (b - a) * t;
+
+  document.addEventListener('mousemove', (e) => {
+    mx = e.clientX;
+    my = e.clientY;
+    // Dot snaps immediately
+    cursorDot.style.transform = `translate(${mx - 3}px, ${my - 3}px)`;
+  });
+
+  (function animCursor() {
+    cx = lerp(cx, mx, 0.1);
+    cy = lerp(cy, my, 0.1);
+    cursor.style.transform = `translate(${cx - 23}px, ${cy - 23}px)`;
+    requestAnimationFrame(animCursor);
+  })();
+
+  // Grow cursor + show label on interactive elements
+  document.querySelectorAll('.work-item').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      cursor.dataset.label = 'VIEW';
+      cursor.classList.add('big');
+    });
+    el.addEventListener('mouseleave', () => {
+      cursor.dataset.label = '';
+      cursor.classList.remove('big');
+    });
+  });
+
+  document.querySelectorAll('a:not(.work-links a), button, .btn').forEach(el => {
+    el.addEventListener('mouseenter', () => cursor.classList.add('big'));
+    el.addEventListener('mouseleave', () => cursor.classList.remove('big'));
+  });
+}
+
+// ============================================
+// NAV — background on scroll + mobile menu
+// ============================================
+const nav       = document.getElementById('nav');
+const navToggle = document.getElementById('navToggle');
+const navLinks  = document.getElementById('navLinks');
+
+const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 30);
 onScroll();
 window.addEventListener('scroll', onScroll, { passive: true });
 
@@ -13,58 +68,80 @@ navToggle.addEventListener('click', () => {
   navToggle.classList.toggle('open');
   navLinks.classList.toggle('open');
 });
-
-navLinks.querySelectorAll('a').forEach(link =>
-  link.addEventListener('click', () => {
+navLinks.querySelectorAll('a').forEach(a =>
+  a.addEventListener('click', () => {
     navToggle.classList.remove('open');
     navLinks.classList.remove('open');
   })
 );
 
 // ============================================
-// SCROLL REVEAL
+// SCROLL REVEAL — .reveal elements
 // ============================================
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('in');
-      revealObserver.unobserve(entry.target);
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('in');
+      revealObs.unobserve(e.target);
     }
   });
-}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 
 // ============================================
-// STAT COUNTERS
+// SECTION TITLE REVEAL — clip-up on scroll
 // ============================================
-const counters = document.querySelectorAll('.hero-stats dt[data-count]');
-const countObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (!entry.isIntersecting) return;
-    const el = entry.target;
+const titleObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('in');
+      titleObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.25 });
+
+document.querySelectorAll('.section-title').forEach(el => titleObs.observe(el));
+
+// ============================================
+// STAT NUMBER SCRAMBLE
+// ============================================
+const statObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const el     = e.target;
     const target = parseInt(el.dataset.count, 10);
-    const duration = 1400;
-    const start = performance.now();
+    const dur    = 1600;
+    const settle = dur * 0.60;
+    const start  = performance.now();
 
     const tick = (now) => {
-      const p = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - p, 3);
-      el.firstChild.textContent = Math.round(target * eased);
-      if (p < 1) requestAnimationFrame(tick);
+      const elapsed = now - start;
+      const p = Math.min(elapsed / dur, 1);
+      if (p < 1) {
+        if (elapsed < settle) {
+          el.textContent = Math.floor(Math.random() * 90 + 10);
+        } else {
+          const sp = (elapsed - settle) / (dur - settle);
+          el.textContent = Math.round(sp * target);
+        }
+        requestAnimationFrame(tick);
+      } else {
+        el.textContent = target;
+      }
     };
     requestAnimationFrame(tick);
-    countObserver.unobserve(el);
+    statObs.unobserve(el);
   });
-}, { threshold: 0.5 });
+}, { threshold: 0.7 });
 
-counters.forEach(el => countObserver.observe(el));
+document.querySelectorAll('.hero-stats dt[data-count]').forEach(el => statObs.observe(el));
 
 // ============================================
-// CONTACT FORM (front-end only for now)
+// CONTACT FORM
 // ============================================
-const form = document.getElementById('contactForm');
-const note = document.getElementById('formNote');
+const form     = document.getElementById('contactForm');
+const formNote = document.getElementById('formNote');
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -73,8 +150,8 @@ form.addEventListener('submit', (e) => {
   btn.disabled = true;
 
   setTimeout(() => {
-    form.querySelectorAll('.field').forEach(f => (f.style.display = 'none'));
+    form.querySelectorAll('.field').forEach(f => f.style.display = 'none');
     btn.style.display = 'none';
-    note.hidden = false;
+    formNote.hidden = false;
   }, 1000);
 });
