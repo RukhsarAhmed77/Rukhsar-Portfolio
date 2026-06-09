@@ -9,7 +9,8 @@
       "Bash(npm install:*)",
       "Bash(vercel --name rukhsar-portfolio --yes)",
       "mcp__21c171d0-a0c1-4df8-9947-ceb2ffe998a2__list_deployments",
-      "mcp__21c171d0-a0c1-4df8-9947-ceb2ffe998a2__get_access_to_vercel_url"
+      "mcp__21c171d0-a0c1-4df8-9947-ceb2ffe998a2__get_access_to_vercel_url",
+      "mcp__21c171d0-a0c1-4df8-9947-ceb2ffe998a2__web_fetch_vercel_url"
     ]
   }
 }
